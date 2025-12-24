@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .favicon-text {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+      }
+    </style>
+  </defs>
+  <text x="2" y="26" class="favicon-text">
+    <tspan fill="#ffffff">P</tspan><tspan fill="#38bdf8">.</tspan>
+  </text>
+</svg>
