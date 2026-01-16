@@ -9,17 +9,210 @@
     <title>Proycer | Hub de Innovación Digital</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
+    <link rel="preload" href="assets/styles.css" as="style">
+    <style>
+        :root {
+            --navy-blue: #0a1628;
+            --navy-light: #142241;
+            --accent-electric: #38bdf8;
+            --white: #fff;
+            --gray-300: #cbd5e1;
+            --transition: all .3s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: #fff;
+            -webkit-font-smoothing: antialiased
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 22, 40, .95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, .1)
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #fff
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none
+        }
+
+        .nav-link {
+            color: #cbd5e1;
+            font-weight: 500;
+            font-size: .95rem;
+            text-decoration: none
+        }
+
+        .menu-toggle {
+            display: none
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a1628 0%, #142241 50%, #0a1628 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #38bdf8, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: rgba(56, 189, 248, .1);
+            border: 1px solid rgba(56, 189, 248, .3);
+            padding: .5rem 1rem;
+            border-radius: 50px;
+            color: #38bdf8;
+            font-size: .875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            margin-bottom: 2.5rem;
+            max-width: 600px
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            text-decoration: none
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            color: #0a1628
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, .3)
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        @media(max-width:768px) {
+            .nav-menu {
+                display: none
+            }
+
+            .menu-toggle {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 5px
+            }
+
+            .menu-toggle span {
+                width: 24px;
+                height: 2px;
+                background: #fff
+            }
+        }
+    </style>
+    <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&subset=latin,latin-ext&display=swap"
-        rel="stylesheet">
-    <!-- Favicons: navy for light mode, white for dark mode -->
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&subset=latin,latin-ext&display=swap">
+    </noscript>
     <link rel="icon" type="image/svg+xml" href="assets/favicon-navy.svg" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/svg+xml" href="assets/favicon-white.svg" media="(prefers-color-scheme: dark)">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/styles.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="assets/styles.css">
+    </noscript>
 </head>
 
 <body>
-    <!-- Header -->
     <header class="header" id="header">
         <div class="container">
             <a href="#" class="logo" style="display: flex; align-items: center;">
@@ -41,7 +234,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="container">
             <div class="hero-content">
@@ -69,7 +261,6 @@
         </div>
     </section>
 
-    <!-- Solutions Section -->
     <section class="solutions" id="soluciones">
         <div class="container">
             <div class="section-header">
@@ -80,7 +271,6 @@
             </div>
 
             <div class="solutions-carousel">
-                <!-- Navigation Tabs (Left) -->
                 <nav class="solutions-nav">
                     <button class="solution-tab active" data-solution="hr">
                         <div class="tab-icon">
@@ -149,7 +339,6 @@
                     </button>
                 </nav>
 
-                <!-- Content Panels (Right) -->
                 <div class="solutions-content">
                     <div class="solution-panel active" data-panel="hr">
                         <div class="panel-header">
@@ -229,7 +418,6 @@
                     </div>
                 </div>
 
-                <!-- Carousel Navigation (Mobile) -->
                 <div class="carousel-controls">
                     <button class="carousel-arrow carousel-prev" aria-label="Anterior">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -253,39 +441,33 @@
         </div>
     </section>
 
-    <!-- Partners / Trust Section -->
     <section class="partners">
         <div class="container">
             <p class="partners-title">Respaldados por</p>
             <div class="partners-grid">
-                <!-- AWS -->
                 <div class="partner-item" title="Amazon Web Services">
                     <svg viewBox="0 0 48 48" fill="currentColor">
                         <path
                             d="M13.527 21.529c0 .597.064 1.08.176 1.435.128.355.288.742.512 1.161.08.129.112.258.112.37 0 .161-.096.322-.304.483l-1.006.67c-.144.097-.288.145-.416.145-.16 0-.32-.08-.48-.226a4.946 4.946 0 0 1-.576-.749 12.6 12.6 0 0 1-.496-.935c-1.248 1.468-2.816 2.202-4.704 2.202-1.344 0-2.416-.387-3.2-1.161-.784-.774-1.184-1.806-1.184-3.097 0-1.37.48-2.483 1.456-3.322.976-.838 2.272-1.258 3.904-1.258.544 0 1.104.048 1.696.129.592.08 1.2.209 1.84.37v-1.177c0-1.226-.256-2.09-.752-2.577-.512-.483-1.376-.726-2.608-.726-.56 0-1.136.064-1.728.209a12.77 12.77 0 0 0-1.728.548c-.256.113-.448.177-.56.209a.96.96 0 0 1-.24.048c-.208 0-.32-.145-.32-.451v-.806c0-.226.032-.395.112-.483.08-.097.224-.193.432-.29.56-.29 1.232-.532 2.016-.725a9.84 9.84 0 0 1 2.496-.306c1.904 0 3.296.435 4.176 1.306.864.87 1.312 2.193 1.312 3.966v5.224h-.04Zm-6.496 2.428c.528 0 1.072-.097 1.648-.29.576-.193 1.088-.548 1.52-1.032.256-.306.448-.645.544-1.032.096-.387.16-.854.16-1.403v-.677a13.478 13.478 0 0 0-1.472-.29 11.916 11.916 0 0 0-1.504-.096c-1.072 0-1.856.209-2.384.645-.528.435-.784 1.048-.784 1.854 0 .757.192 1.322.592 1.709.384.403.944.612 1.68.612Zm12.848 1.742c-.272 0-.448-.048-.56-.161-.112-.097-.208-.306-.288-.58l-3.216-10.578c-.08-.29-.12-.483-.12-.58 0-.226.112-.354.336-.354h1.568c.288 0 .48.048.576.161.112.097.192.306.272.58l2.304 9.078 2.144-9.078c.064-.29.144-.483.256-.58.112-.097.32-.161.592-.161h1.28c.288 0 .48.048.592.161.112.097.208.306.256.58l2.176 9.19 2.368-9.19c.08-.29.176-.483.272-.58.112-.097.304-.161.576-.161h1.488c.224 0 .352.113.352.354 0 .065-.016.13-.032.21-.016.08-.048.177-.096.322l-3.296 10.579c-.08.29-.176.483-.288.58-.112.097-.304.161-.56.161h-1.376c-.288 0-.48-.048-.592-.161-.112-.113-.208-.306-.256-.597l-2.128-8.84-2.112 8.824c-.064.29-.144.483-.256.597-.112.113-.32.161-.592.161H19.88Zm20.56.354c-.832 0-1.664-.097-2.464-.29-.8-.193-1.424-.403-1.856-.645-.256-.145-.432-.306-.496-.451a1.142 1.142 0 0 1-.096-.435v-.838c0-.306.112-.451.336-.451.08 0 .16.016.24.048.08.032.192.08.32.129.432.193.896.354 1.408.467a6.75 6.75 0 0 0 1.536.177c.816 0 1.456-.145 1.92-.435.464-.29.704-.709.704-1.242 0-.37-.112-.677-.336-.919-.224-.241-.656-.457-1.28-.661l-1.872-.58c-.928-.29-1.616-.725-2.032-1.306-.416-.564-.624-1.193-.624-1.87 0-.548.12-1.032.352-1.451.24-.419.56-.79.96-1.097.4-.322.864-.564 1.408-.742a5.772 5.772 0 0 1 1.744-.257c.304 0 .624.016.944.064.336.048.64.113.944.177.288.08.56.161.816.258.256.096.448.193.576.29.192.096.32.193.4.306.08.097.128.242.128.435v.773c0 .306-.112.467-.336.467a1.548 1.548 0 0 1-.56-.177 6.968 6.968 0 0 0-2.592-.483c-.736 0-1.328.113-1.744.37-.416.258-.624.645-.624 1.193 0 .371.128.693.384.935.256.242.736.483 1.424.709l1.824.58c.912.29 1.568.693 1.952 1.209.384.515.576 1.097.576 1.726 0 .564-.112 1.08-.352 1.531-.224.451-.544.854-.96 1.178-.416.338-.912.58-1.504.758-.624.193-1.28.29-1.984.29Z" />
                     </svg>
                 </div>
-                <!-- ISO 9001 -->
                 <div class="partner-item" title="ISO 9001 - Gestión de Calidad">
                     <div class="partner-badge">
                         <span class="badge-text">ISO</span>
                         <span class="badge-number">9001</span>
                     </div>
                 </div>
-                <!-- ISO 27001 -->
                 <div class="partner-item" title="ISO 27001 - Seguridad de la Información">
                     <div class="partner-badge">
                         <span class="badge-text">ISO</span>
                         <span class="badge-number">27001</span>
                     </div>
                 </div>
-                <!-- IAPG -->
                 <div class="partner-item" title="Instituto Argentino del Petróleo y Gas">
                     <div class="partner-badge partner-badge--text">
                         <span>IAPG</span>
                     </div>
                 </div>
-                <!-- Industria Argentina -->
                 <div class="partner-item" title="Industria Argentina">
                     <div class="partner-badge partner-badge--argentina">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -298,13 +480,11 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="nosotros">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="assets/nosotros.webp"
-                        alt="Equipo Proycer trabajando">
+                    <img src="assets/nosotros.webp" alt="Equipo Proycer trabajando">
                 </div>
                 <div class="about-content">
                     <span class="section-tag">Sobre Proycer</span>
@@ -345,7 +525,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contacto">
         <div class="container">
             <div class="section-header">
@@ -365,7 +544,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
