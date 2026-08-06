@@ -1,0 +1,13 @@
+{
+  "name": "proycer-web",
+  "private": true,
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i assets/tailwind.css -o assets/styles.css --minify",
+    "dev": "npx @tailwindcss/cli -i assets/tailwind.css -o assets/styles.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0",
+    "terser": "^5.39.0"
+  }
+}
